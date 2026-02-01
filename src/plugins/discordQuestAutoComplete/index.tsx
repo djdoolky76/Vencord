@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import definePlugin from "@utils/types";
+import { Devs } from "@utils/constants";
+import { definePlugin } from "@utils/plugins";
 import { findByCodeLazy, findByPropsLazy } from "@webpack";
 import { FluxDispatcher, RestAPI } from "@webpack/common";
 
@@ -26,10 +27,7 @@ const fakeApplications = new Map();
 export default definePlugin({
     name: "CompleteDiscordQuest",
     description: "A plugin that completes multiple discord quests in background simultaneously.",
-    authors: [{
-        name: "djdoolky76",
-        id: 546797199527247874n
-    }],
+    authors: [Devs.djdoolky76],
     settings,
     patches: [
         {
