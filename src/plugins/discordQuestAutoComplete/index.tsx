@@ -5,7 +5,7 @@
  */
 
 import { Devs } from "@utils/constants";
-import { definePlugin } from "@utils/plugins";
+import definePlugin from "@utils/types";
 import { findByCodeLazy, findByPropsLazy } from "@webpack";
 import { FluxDispatcher, RestAPI } from "@webpack/common";
 
