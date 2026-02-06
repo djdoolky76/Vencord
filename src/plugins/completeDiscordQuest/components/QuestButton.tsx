@@ -10,7 +10,6 @@ import { Flex } from "@components/Flex";
 import { findByCodeLazy, findByPropsLazy, findComponentByCodeLazy } from "@webpack";
 import { Tooltip, useEffect, useState } from "@webpack/common";
 
-// eslint-disable-next-line path-alias/no-relative
 import { QuestsStore } from "../stores";
 
 const QuestIcon = findByCodeLazy("\"M7.5 21.7a8.95");
