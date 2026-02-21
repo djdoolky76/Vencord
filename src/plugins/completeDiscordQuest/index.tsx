@@ -27,20 +27,20 @@ const fakeApplications = new Map();
 export default definePlugin({
     name: "CompleteDiscordQuest",
     description: "A plugin that completes multiple discord quests in background simultaneously.",
-    authors: [Devs.djdoolky76],
+    authors: [Devs.djdoolky76, Devs.nicola02nb],
     settings,
     patches: [
         {
-            find: ".winButtonsWithDivider]",
+            find: ".PlatformTypes.WEB",
             replacement: {
                 match: /(\((\i)\){)(let{leading)/,
                 replace: "$1$2?.trailing?.props?.children?.unshift($self.renderQuestButtonTopBar());$3"
             }
         },
         {
-            find: "#{intl::ACCOUNT_SPEAKING_WHILE_MUTED}",
+            find: "accountContainerRef:",
             replacement: {
-                match: /className:\i\.buttons,.+?children:\[/,
+                match: /className:\i\.Uo,style:\i,children:\[/,
                 replace: "$&$self.renderQuestButtonSettingsBar(),"
             }
         },
@@ -49,13 +49,6 @@ export default definePlugin({
             replacement: {
                 match: /(\i).createElement\("a",(\i)\)/,
                 replace: "$1.createElement(\"a\",$self.renderQuestButtonBadges($2))"
-            }
-        },
-        {
-            find: "location:\"GlobalDiscoverySidebar\"",
-            replacement: {
-                match: /(\(\i\){let{tab:(\i)}=.+?children:\i}\))(]}\))/,
-                replace: "$1,$self.renderQuestButtonBadges($2)$3"
             }
         },
         {
@@ -136,6 +129,7 @@ function isQuestEligibleForFarming(quest: QuestValue): boolean {
     const questConfig = quest.config.taskConfig || quest.config.taskConfigV2;
     if (!Object.keys(questConfig.tasks).some(taskName => {
         return (taskName === "WATCH_VIDEO" && settings.store.farmVideos
+            || taskName === "WATCH_VIDEO_ON_MOBILE" && settings.store.farmVideos
             || taskName === "PLAY_ON_DESKTOP" && settings.store.farmPlayOnDesktop
             || taskName === "STREAM_ON_DESKTOP" && settings.store.farmStreamOnDesktop
             || taskName === "PLAY_ACTIVITY" && settings.store.farmPlayActivity);
@@ -268,7 +262,7 @@ function completeQuest(quest: QuestValue) {
             case "PLAY_ON_DESKTOP":
                 RestAPI.get({ url: `/applications/public?application_ids=${applicationId}` }).then(res => {
                     const appData = res.body[0];
-                    const exeName = appData.executables.find(x => x.os === "win32").name.replace(">", "");
+                    const exeName = appData.executables?.find(x => x.os === "win32")?.name?.replace(">", "") ?? appData.name.replace(/[\/\\:*?"<>|]/g, "");
 
                     const fakeGame = {
                         cmdLine: `C:\\Program Files\\${appData.name}\\${exeName}`,
