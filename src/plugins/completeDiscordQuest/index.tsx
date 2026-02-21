@@ -7,7 +7,7 @@
 import definePlugin from "@utils/types";
 import { findByCodeLazy, findByPropsLazy } from "@webpack";
 import { FluxDispatcher, RestAPI } from "@webpack/common";
-
+import { Devs } from "@utils/constants";
 import { QuestButton, QuestsCount } from "./components/QuestButton";
 import settings from "./settings";
 import { ChannelStore, GuildChannelStore, QuestsStore, RunningGameStore } from "./stores";
