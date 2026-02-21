@@ -10,7 +10,7 @@ import { Flex } from "@components/Flex";
 import { findByCodeLazy, findByPropsLazy, findComponentByCodeLazy } from "@webpack";
 import { Tooltip, useEffect, useState } from "@webpack/common";
 
-import { QuestsStore } from "../stores";
+import { QuestsStore } from "@plugins/completeDiscordQuest/stores";
 
 const QuestIcon = findByCodeLazy("\"M7.5 21.7a8.95");
 const { navigateToQuestHome } = findByPropsLazy("navigateToQuestHome");
