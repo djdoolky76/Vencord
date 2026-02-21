@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+import { Devs } from "@utils/constants";
 import definePlugin from "@utils/types";
 import { findByCodeLazy, findByPropsLazy } from "@webpack";
 import { FluxDispatcher, RestAPI } from "@webpack/common";
-import { Devs } from "@utils/constants";
+
 import { QuestButton, QuestsCount } from "./components/QuestButton";
 import settings from "./settings";
 import { ChannelStore, GuildChannelStore, QuestsStore, RunningGameStore } from "./stores";
@@ -261,7 +262,7 @@ function completeQuest(quest: QuestValue) {
             case "PLAY_ON_DESKTOP":
                 RestAPI.get({ url: `/applications/public?application_ids=${applicationId}` }).then(res => {
                     const appData = res.body[0];
-                    const exeName = appData.executables?.find(x => x.os === "win32")?.name?.replace(">", "") ?? appData.name.replace(/[\/\\:*?"<>|]/g, "");
+                    const exeName = appData.executables?.find(x => x.os === "win32")?.name?.replace(">", "") ?? appData.name.replace(/[\x2F\\:*?"<>|]/g, "");
 
                     const fakeGame = {
                         cmdLine: `C:\\Program Files\\${appData.name}\\${exeName}`,
