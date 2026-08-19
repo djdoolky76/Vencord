@@ -666,7 +666,6 @@ export const Devs = /* #__PURE__*/ Object.freeze({
         name: "yuna0x0",
         id: 213656926414831616n
     },
-<<<<<<< HEAD
     djdoolky76: {
         name: "djdoolky76",
         id: 546797199527247874n,
@@ -678,11 +677,10 @@ export const Devs = /* #__PURE__*/ Object.freeze({
     syntt: {
         name: "syntt_",
         id: 1419678867005767783n,
-=======
+    },
     Davri: {
         name: "Davri",
         id: 457579346282938368n
->>>>>>> upstream/main
     }
 } satisfies Record<string, Dev>);
 
