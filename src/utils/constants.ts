@@ -678,6 +678,10 @@ export const Devs = /* #__PURE__*/ Object.freeze({
         name: "syntt_",
         id: 1419678867005767783n,
     },
+    theo: {
+        name: "theo",
+        id: 1081551899397992509n
+    },
     scattagain: {
         name: "Amelia",
         id: 1098234477626544180n

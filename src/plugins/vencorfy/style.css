@@ -138,7 +138,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: color 0.15s ease, background-color 0.15s ease;
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease;
 }
 
 .vc-vencorfy-icon-btn:hover {
@@ -157,8 +159,12 @@ svg.vc-vencorfy-spinning,
 }
 
 @keyframes vc-vencorfy-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .vc-vencorfy-user-row {
@@ -171,7 +177,9 @@ svg.vc-vencorfy-spinning,
     border: 1px solid var(--bf-border);
     border-radius: var(--bf-radius);
     margin-bottom: 10px;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease;
 }
 
 .vc-vencorfy-user-row:hover {
@@ -356,7 +364,9 @@ svg.vc-vencorfy-spinning,
     padding: 6px 10px;
     font-size: 11.5px;
     outline: none;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease;
 }
 
 .vc-vencorfy-game-input:hover {
@@ -375,7 +385,10 @@ svg.vc-vencorfy-spinning,
     padding: 4px 8px;
     font-size: 11px;
     cursor: pointer;
-    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    transition:
+        color 0.15s ease,
+        background-color 0.15s ease,
+        border-color 0.15s ease;
 }
 
 .vc-vencorfy-game-clear:hover {
@@ -409,7 +422,9 @@ svg.vc-vencorfy-spinning,
     justify-content: space-between;
     align-items: center;
     gap: 8px;
-    transition: background-color 0.12s ease, color 0.12s ease;
+    transition:
+        background-color 0.12s ease,
+        color 0.12s ease;
 }
 
 .vc-vencorfy-game-option:hover {
@@ -448,7 +463,10 @@ svg.vc-vencorfy-spinning,
     cursor: pointer;
     z-index: 5;
     opacity: 0;
-    transition: opacity 0.18s ease, width 0.15s ease, color 0.15s;
+    transition:
+        opacity 0.18s ease,
+        width 0.15s ease,
+        color 0.15s;
 }
 
 .vc-vencorfy-arrow:hover {
@@ -483,7 +501,11 @@ svg.vc-vencorfy-spinning,
     border-radius: 9px;
     border: 1.5px solid var(--bf-border);
     cursor: pointer;
-    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease, box-shadow 0.15s ease;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        transform 0.12s ease,
+        box-shadow 0.15s ease;
     position: relative;
     min-width: 72px;
     background: rgb(255 255 255 / 2%);
@@ -637,7 +659,10 @@ svg.vc-vencorfy-spinning,
     padding: 4px 9px;
     font-size: 10.5px;
     cursor: pointer;
-    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    transition:
+        color 0.15s ease,
+        border-color 0.15s ease,
+        background-color 0.15s ease;
 }
 
 .vc-vencorfy-reset-btn:hover {
@@ -716,7 +741,9 @@ svg.vc-vencorfy-spinning,
     padding: 2.5px 8px;
     border-radius: 6px;
     flex-shrink: 0;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
 }
 
 .vc-vencorfy-cancel-btn:hover {
@@ -768,8 +795,12 @@ svg.vc-vencorfy-spinning,
 }
 
 @keyframes vc-vencorfy-slide-up {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .vc-vencorfy-sheet-handle {
@@ -1108,7 +1139,9 @@ svg.vc-vencorfy-spinning,
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.15s ease, color 0.15s ease;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
 }
 
 .vc-vencorfy-widget-btn:hover {
@@ -1139,7 +1172,9 @@ svg.vc-vencorfy-spinning,
     width: 0%;
     border-radius: 999px;
     background: var(--brand-500, #5865f2);
-    transition: width 0.25s ease, background-color 0.2s ease;
+    transition:
+        width 0.25s ease,
+        background-color 0.2s ease;
 }
 
 .vc-vencorfy-widget.is-completed .vc-vencorfy-widget-fill {
@@ -1158,7 +1193,9 @@ svg.vc-vencorfy-spinning,
     opacity: 0;
     transform: scale(0.95) translateY(2px);
     transform-origin: bottom center;
-    transition: opacity 0.1s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:
+        opacity 0.1s ease,
+        transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
     font-family: var(--font-primary, "gg sans", "Noto Sans", sans-serif);
     user-select: none;
 }

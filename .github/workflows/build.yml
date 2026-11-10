@@ -65,7 +65,7 @@ jobs:
               run: |
                   # 1. Delete the old 'devbuild' release and tag (if it exists) so we don't get errors
                   gh release delete devbuild --cleanup-tag -y || true
-                  
+
                   # 2. Create a fresh release named 'devbuild' with the new files
                   gh release create devbuild dist/* \
                     --title "DevBuild $RELEASE_TAG" \
